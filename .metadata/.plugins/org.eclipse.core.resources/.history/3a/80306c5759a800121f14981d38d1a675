@@ -1,0 +1,55 @@
+import java.io.File;
+import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.newdawn.slick.*;
+
+
+public class ResourceParser 
+{
+	private String resource;
+	private File xmlManifest;
+	
+	DocumentBuilderFactory dbFactory;
+	
+	Map<String, Sprite> spriteCache;
+	Map<String, GameRoom> roomCache;
+	
+	
+	public ResourceParser(String newResource)
+	{
+		resource = newResource;
+		dbFactory = DocumentBuilderFactory.newInstance();
+	}
+	
+	public void setResource(String newResource){resource = newResource;}
+	public String getResource(){return resource;}
+	
+	public void ParseManifest()
+	{
+		xmlManifest = new File("/rsc/xml/GameManifest.xml");
+		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+		Document doc = dBuilder.parse(xmlManifest);
+	}
+	
+	public String parseLaunchName()
+	{
+		return null;
+	}
+	
+	public Map<String, GameRoom> getCachedRooms(){return roomCache;}
+	public GameRoom parseRooms()
+	{
+		return null;
+	}
+
+	public Map<String, Sprite> getCachedSprites(){return spriteCache;}
+	public Sprite parseSprites(){
+		return null;
+	}
+	
+	
+	
+}

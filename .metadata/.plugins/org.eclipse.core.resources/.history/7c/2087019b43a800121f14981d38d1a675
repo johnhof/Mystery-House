@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<maps>
+	<path>entryway.xml</path>
+</maps>
+
+<sounds>
+	<path></path>
+</sounds>
+
+<objects>
+	<path>characters.xml</path>
+<objects>

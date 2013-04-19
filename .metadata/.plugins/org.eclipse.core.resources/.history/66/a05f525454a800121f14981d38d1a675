@@ -1,0 +1,18 @@
+
+public class ManifestParser extends ResourceParser{
+
+	public ManifestParser(String newResource) {
+		super(newResource);
+	}
+	
+	public String[] getMaps()
+	{
+		return null;
+	}
+	
+	public String[] getObjects()
+	{
+		return null;
+	}
+
+}

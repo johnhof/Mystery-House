@@ -1,0 +1,29 @@
+import org.newdawn.slick.*;
+import org.newdawn.slick.tiled.TiledMap;
+
+public class ObjectFactory implements Constants{
+	
+	public static TiledMap genMap(String mapPath)
+	{
+		try 
+		{
+			return new TiledMap(mapPath);
+		} catch (SlickException e) {
+			System.out.print("ERROR: map generation failed");
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public Animation genAnimation(String[] imgPaths)
+	{
+		for(int i = 0; i < imgPaths.length; i++)
+		{
+			
+		}
+		return null;
+		
+	}
+	
+	
+}

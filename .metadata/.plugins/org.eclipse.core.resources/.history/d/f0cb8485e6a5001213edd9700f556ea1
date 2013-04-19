@@ -1,0 +1,141 @@
+import org.newdawn.slick.Animation;
+import org.newdawn.slick.AppGameContainer;
+import org.newdawn.slick.BasicGame;
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
+import org.newdawn.slick.SlickException;
+/**
+ * @author panos
+ */
+
+import org.newdawn.slick.AppGameContainer;
+import org.newdawn.slick.BasicGame;
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
+import org.newdawn.slick.SlickException;
+import org.newdawn.slick.tiled.TiledMap;
+
+
+public class Test extends BasicGame
+{
+  
+    Image plane = null;
+    Image character = null;
+    Image land = null;
+    float x = 64;
+    float y = 64;
+    float scale = 1;
+    final float MOVE_MULT = 0.1f;
+    private TiledMap entryWay;
+    private boolean[][] blocked;
+    private static final int SIZE = 16; 
+    private Animation sprite, up, down, left, right;
+  
+  
+	public Test() 
+	{
+		super("Mystery House");
+	}
+	  
+    @Override
+    public void init(GameContainer gc)
+            throws SlickException {
+        character = new Image("rsc/character.png");
+        land = new Image("rsc/land.jpg");
+        entryWay = new TiledMap("rsc/new_entry.tmx");
+
+        /*Image [] movementUp = {new Image("data/wmg1_bk1.png"), new Image("data/wmg1_bk2.png")};
+        Image [] movementDown = {new Image("data/wmg1_fr1.png"), new Image("data/wmg1_fr2.png")};
+        Image [] movementLeft = {new Image("data/wmg1_lf1.png"), new Image("data/wmg1_lf2.png")};*/
+        Image [] movementRight = {new Image("rsc/character_r1.png"), new Image("rsc/character_r2.png")};
+        int [] duration = {150, 150};
+        
+		/*up = new Animation(movementUp, duration, false);
+		down = new Animation(movementDown, duration, false);
+		left = new Animation(movementLeft, duration, false);*/
+		right = new Animation(movementRight, duration, false);
+		
+		sprite = right;
+         
+        // build a collision map based on tile properties in the TileD map 
+        blocked = new boolean[entryWay.getWidth()][entryWay.getHeight()];
+		System.out.println("width: "+entryWay.getWidth()+", height: "+entryWay.getHeight());
+        for (int xAxis=0;xAxis<entryWay.getWidth(); xAxis++)
+        {
+			System.out.print("xloop-");
+        	for (int yAxis=0;yAxis<entryWay.getHeight(); yAxis++)
+            {
+    			System.out.print("yloop-");
+        		int tileID = entryWay.getTileId(xAxis, yAxis, 0);
+        		String value = entryWay.getTileProperty(tileID, "blocked", "false");
+        		System.out.println("ID: "+tileID+", value:"+value);
+        		if ("true".equals(value))
+        		{
+        			System.out.println("X: "+xAxis+", Y: "+yAxis);
+        			blocked[xAxis][yAxis] = true;
+                }
+            }
+         }
+		System.out.println("done\n");
+    }
+  
+    @Override
+    public void update(GameContainer gc, int delta)
+            throws SlickException
+    {
+        Input input = gc.getInput();
+        
+        if(input.isKeyDown(Input.KEY_LEFT))
+        {
+            if (!isBlocked((x-MOVE_MULT * delta), y))x-= MOVE_MULT * delta;
+        }
+  
+        if(input.isKeyDown(Input.KEY_RIGHT))
+        {
+            sprite = right;
+            sprite.update(delta);
+            if (!isBlocked((x+MOVE_MULT * delta), y)) x+= MOVE_MULT * delta;
+        }
+  
+        if(input.isKeyDown(Input.KEY_UP))
+        {
+            if (!isBlocked(x, y-MOVE_MULT * delta)) y-= MOVE_MULT * delta;
+        }
+        
+        if(input.isKeyDown(Input.KEY_DOWN))
+        {
+            if (!isBlocked(x, (y+MOVE_MULT * delta)))y+= MOVE_MULT * delta;
+        }
+    }
+  
+    public void render(GameContainer gc, Graphics g)
+            throws SlickException
+    {
+        entryWay.render(0, 0);
+        sprite.draw(x,y);
+  
+    }
+  
+    public static void main(String[] args)
+            throws SlickException
+    {
+         AppGameContainer app =
+            new AppGameContainer( new Test() );
+  
+         app.setDisplayMode(800, 600, false);
+         app.start();
+    }
+    
+    private boolean isBlocked(float x, float y)
+    {/*
+         int xBlock = (int)x / SIZE;
+         int yBlock = (int)y / SIZE;
+         System.out.println("X: "+xBlock+", Y: "+yBlock);
+         return blocked[xBlock][yBlock];*/
+    	return false;
+    }
+}

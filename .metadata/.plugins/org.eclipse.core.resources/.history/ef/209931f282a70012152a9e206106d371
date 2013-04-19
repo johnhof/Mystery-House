@@ -1,0 +1,16 @@
+
+public class Boundary 
+{
+	private float xStart;
+	private float xEnd;
+	private float yStart;
+	private float yEnd;
+	
+	public Boundary(float newXStart, float newXEnd, float newYStart, float newYEnd)
+	{
+		xStart = newXStart;
+		xEnd = newXEnd;
+		yStart = newYStart;
+		yEnd = newYEnd;
+	}
+}

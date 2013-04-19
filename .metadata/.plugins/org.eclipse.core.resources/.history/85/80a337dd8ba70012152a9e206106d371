@@ -1,0 +1,19 @@
+import org.newdawn.slick.*;
+
+public class GameRoom {
+	private String name;
+	private String mapPath;
+	private Boundary [] boundaries;
+	
+	public GameRoom(String newName, String newMapPath) 
+	{
+		name = newName;
+		mapPath = newMapPath;
+		loadBoundaries();
+	}
+	
+	public void loadBoundaries()
+	{
+		
+	}
+}

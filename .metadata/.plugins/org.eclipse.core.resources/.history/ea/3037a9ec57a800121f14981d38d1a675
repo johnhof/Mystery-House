@@ -1,0 +1,19 @@
+import org.newdawn.slick.*;
+
+
+public class ResourceParser 
+{
+	private String resource;
+	
+	public ResourceParser(String newResource)
+	{
+		resource = newResource;
+	}
+	
+	public void setResource(String newResource){resource = newResource;}
+	public String getResource(){return resource;}
+	
+	public Image parseBackground(){
+		return
+	}
+}

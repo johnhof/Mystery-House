@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<rooms>
+	<path>rsc/xml/entryway.xml</path>
+</rooms>
+
+<sounds>
+	<path>foo</path>
+</sounds>
+
+<objects>
+	<path>rsc/xml/characters.xml</path>
+<objects>

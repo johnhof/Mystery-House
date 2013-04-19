@@ -1,0 +1,16 @@
+<characters>
+	<character>
+		<player>
+			<img></img>
+			<animation id="up">
+				<img></img>
+			</animation>
+			<animation id="down">
+			</animation>
+			<animation id="left">
+			</animation>
+			<animation id="right">
+			</animation>
+		</player>
+	</character>
+</characters>

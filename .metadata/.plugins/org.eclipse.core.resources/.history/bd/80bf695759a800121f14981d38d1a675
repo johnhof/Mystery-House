@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<map>
+	<name>entryway</name>
+	<background>rsc/images/entryway.png</background>
+	<bounds>
+		<boundary>
+			<id>top</id>
+			<xstart>0</xstart>
+			<xend>160</xend>
+			<ystart>0</ystart>
+			<yend>32</ystart>
+		</boundary>
+		<boundary>
+			<id>left</id>
+			<xstart>0</xstart>
+			<xend>32</xend>
+			<ystart>0</ystart>
+			<yend>160</ystart>
+		</boundary>
+		<boundary>
+			<id>right</id>
+			<xstart>128</xstart>
+			<xend>160</xend>
+			<ystart>0</ystart>
+			<yend>160</yend>
+		</boundary>
+		<boundary>
+			<id>bottom</id>
+			<xstart>0</xstart>
+			<xend>160</xend>
+			<ystart>128</ystart>
+			<yend>160</ystart>
+		</boundary>	
+	</bounds>
+	
+	<exits>
+		<exit>
+			<target>kitchen</target>
+			<xstart></xstart>
+			<xend></xend>
+			<ystart></ystart>
+			<yend></ystart>
+		</exit>
+	</exits>
+</map>

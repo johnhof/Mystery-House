@@ -1,0 +1,28 @@
+import org.newdawn.slick.Image;
+
+
+public class Boundary 
+{
+	private float xStart;
+	private float xEnd;
+	private float yStart;
+	private float yEnd;
+	
+	public Boundary(float newXStart, float newXEnd, float newYStart, float newYEnd)
+	{
+		xStart = newXStart;
+		xEnd = newXEnd;
+		yStart = newYStart;
+		yEnd = newYEnd;
+	}
+	
+	public float getXStart(){return xStart;}
+	public float getXEnd(){return xEnd;}
+	public float getYStart(){return yStart;}
+	public float getYEnd(){return yEnd;}
+	
+	public void setXStart(float newXStart){xStart = newXStart;}
+	public void setXEnd(float newXEnd){xEnd = newXEnd;}
+	public void setYStart(float newYStart){yStart = newYStart;}
+	public void setYEnd(float newYEnd){yEnd = newYEnd;}	
+}

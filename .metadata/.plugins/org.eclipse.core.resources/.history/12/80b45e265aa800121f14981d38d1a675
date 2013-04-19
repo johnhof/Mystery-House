@@ -1,0 +1,74 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.newdawn.slick.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+
+public class ResourceParser 
+{
+	private String resource;
+	private File xmlManifest;
+	
+	DocumentBuilderFactory dbFactory;
+	
+	Map<String, Sprite> spriteCache;
+	Map<String, GameRoom> roomCache;
+	
+	
+	public ResourceParser(String newResource)
+	{
+		resource = newResource;
+		dbFactory = DocumentBuilderFactory.newInstance();
+	}
+	
+	public void setResource(String newResource){resource = newResource;}
+	public String getResource(){return resource;}
+	
+	public void ParseManifest()
+	{
+		//set up the document
+		xmlManifest = new File("/rsc/xml/GameManifest.xml");
+		Document doc = null;
+		try 
+		{
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			doc = dBuilder.parse(xmlManifest);
+		} 
+		catch (SAXException | IOException |ParserConfigurationException e)
+		{
+			e.printStackTrace();
+			return;
+		} 
+		
+		
+
+	}
+	
+	public String parseLaunchName()
+	{
+		return null;
+	}
+	
+	public Map<String, GameRoom> getCachedRooms(){return roomCache;}
+	public GameRoom parseRooms()
+	{
+		NodeList nList = doc.getElementsByTagName("rooms");
+		return null;
+	}
+
+	public Map<String, Sprite> getCachedSprites(){return spriteCache;}
+	public Sprite parseSprites(){
+		return null;
+	}
+	
+	
+	
+}

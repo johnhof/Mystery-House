@@ -1,0 +1,31 @@
+import org.newdawn.slick.*;
+
+public class GameObject 
+{
+
+	private float x;
+	private float y;
+	private Boundary bound; 
+	private boolean useable;	private Image img;
+	
+	
+	GameObject(float newX, float newY, Boundary newBound, boolean isUseable, Image newImg)
+	{
+		x = newX;
+		y = newY;
+		bound = newBound;
+		useable = isUseable;
+		img = newImg;
+	}
+	
+	public float getX(){return x;}
+	public float getY(){return y;}
+	public Boundary getBound(){return bound;}
+	public Image getImage(){return img;}
+	
+	public void setY(float newY){y = newY;}
+	public void setX(float newX){x = newX;}
+	public void setWidth(Boundary newBound){bound = newBound;}
+	public void setImage(Image newImg){img = newImg;}	
+}
+ 

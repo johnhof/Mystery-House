@@ -1,0 +1,26 @@
+import org.newdawn.slick.*;
+import org.w3c.dom.*;
+
+public interface Utility{
+
+	/*-Sizing tools-*/
+	public static final float SCALE = 1;
+    public static final float BLOCK_SIZE = 16; 
+    public static final int MAP_WIDTH = 650;
+    public static final int MAP_HEIGHT = 650;
+    
+    //public final float MOVE_MULT = 0.05f;
+    public final float MOVE_MULT = 0.08f;
+
+    /*-Int ID's-*/
+    public final int UP = 0;
+    public final int DOWN = 1;
+    public final int LEFT = 2;
+    public final int RIGHT = 3;
+    
+    /*-Strings-*/    
+    public final String GAME_MANIFEST = "GameManifest.xml";
+    
+    
+    /*Images*/    
+}

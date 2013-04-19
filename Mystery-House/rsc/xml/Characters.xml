@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<characters>
+	<character id="player">
+		<animation id="up">
+			<img>rsc/images/character_u1.png</img>
+			<img>rsc/images/character_u2.png</img>
+		</animation>
+
+		<animation id="down">
+			<img>rsc/images/character_d1.png</img>
+			<img>rsc/images/character_d2.png</img>
+		</animation>
+
+		<animation id="left">
+			<img>rsc/images/character_l1.png</img>
+			<img>rsc/images/character_l2.png</img>
+		</animation>
+
+		<animation id="right">
+			<img>rsc/images/character_r1.png</img>
+			<img>rsc/images/character_r2.png</img>
+		</animation>
+	</character>
+</characters>

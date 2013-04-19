@@ -1,0 +1,7 @@
+import org.newdawn.slick.*;
+
+public class GameRoom {
+	private String name;
+	private String mapPath;
+	private Boundary [] boundaries;
+}

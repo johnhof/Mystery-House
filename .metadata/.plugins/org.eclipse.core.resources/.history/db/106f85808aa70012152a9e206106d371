@@ -1,0 +1,51 @@
+import org.newdawn.slick.Animation;
+
+
+public class Sprite implements Constants{
+    private Animation state, up, down, left, right;
+    int stateId;
+    int [] duration;
+    
+    public Sprite(Animation newState)
+    {
+    	state = newState;
+    }
+    public Sprite(Animation newUp, Animation newDown, Animation newLeft, Animation newRight, int [] newDuration)
+    {
+    	up = newUp;
+    	down = newDown;
+    	left = newLeft;
+    	right = newRight;
+    	duration = newDuration;
+    }
+    
+    public void upState(){state = up;}
+    public void downState(){state = down;}
+    public void leftState(){state = left;}
+    public void rightState(){state = right;}
+    public void setState(int stateId)
+    {
+    	switch(stateId)
+    	{
+    		case UP: 
+    			break;
+    		case DOWN:
+    			break;
+    		case LEFT:
+    			break;
+    		case RIGHT:
+    			break;
+    		default:
+    			System.out.println("WARNING: invalid state ID");
+    	}
+    }
+    
+    public int getStateId()
+    {
+    	return stateId;
+    }
+    public Animation getAnimationState()
+    {
+    	return state;
+    }
+}

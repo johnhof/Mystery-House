@@ -1,0 +1,27 @@
+import org.newdawn.slick.BasicGame;
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.SlickException;
+
+
+public interface Constants{
+
+    public static final int SIZE = 16; 
+    public static final int MAP_WIDTH = 600;
+    public static final int MAP_HEIGHT = 600;
+    
+    public final float MOVE_MULT = 0.1f;
+    
+    public final String PLAYER_UP_0 = "";
+    public final String PLAYER_UP_1 = "";
+    
+    public final String PLAYER_DOWN_0 = "";
+    public final String PLAYER_DOWN_1 = "";
+    
+    public final String PLAYER_RIGHt_0 = "";
+    public final String PLAYER_RIGHT_1 = "";
+   
+
+    public final String PLAYER_LEFT_0 = "";
+    public final String PLAYER_LEFT_1 = "";
+}

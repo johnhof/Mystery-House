@@ -1,0 +1,12 @@
+
+public class MapParser extends ResourceParser
+{
+
+	public MapParser(String newResource){super(newResource);}
+	
+	public String();
+	{
+		
+	}
+
+}

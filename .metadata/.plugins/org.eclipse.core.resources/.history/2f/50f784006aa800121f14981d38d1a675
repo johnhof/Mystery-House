@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<rooms>
+	<path>entryway.xml</path>
+</rooms>
+
+<sounds>
+	<path>foo</path>
+</sounds>
+
+<objects>
+	<path>characters.xml</path>
+</objects>

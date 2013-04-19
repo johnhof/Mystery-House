@@ -1,0 +1,20 @@
+import org.newdawn.slick.*;
+
+public class GameRoom extends GameObject{
+	private String name;
+	private String mapPath;
+	private Boundary [] boundaries;
+	
+	public GameRoom(String newName, String newMapPath) 
+	{
+		super(x, x, null, useable, null);
+		name = newName;
+		mapPath = newMapPath;
+		loadBoundaries();
+	}
+	
+	public void loadBoundaries()
+	{
+		
+	}
+}

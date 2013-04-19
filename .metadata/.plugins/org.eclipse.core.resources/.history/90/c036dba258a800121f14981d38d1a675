@@ -1,0 +1,42 @@
+import java.io.File;
+import java.util.Map;
+
+import org.newdawn.slick.*;
+
+
+public class ResourceParser 
+{
+	private String resource;
+	private File xmlManifest;
+	Map<String, Sprite> spriteCache;
+	Map<String, GameRoom> roomCache;
+	
+	
+	public ResourceParser(String newResource)
+	{
+		resource = newResource;
+	}
+	
+	public void setResource(String newResource){resource = newResource;}
+	public String getResource(){return resource;}
+	
+	
+	public String parseLaunchName()
+	{
+		return null;
+	}
+	
+	public Map<String, GameRoom> getCachedRooms(){return roomCache;}
+	public GameRoom parseRooms()
+	{
+		return null;
+	}
+
+	public Map<String, Sprite> getCachedSprites(){return spriteCache;}
+	public Sprite parseSprites(){
+		return null;
+	}
+	
+	
+	
+}

@@ -1,1 +1,16 @@
 1365905695887	Rename type 'test'
+1366005240782	Delete element
+1366130313974	Rename type 'MysteryGame'
+1366130360525	Rename type 'Test'
+1366130427736	Delete element
+1366130472544	Rename type 'MysteryUtility'
+1366130685537	Rename type 'MysteryResources'
+1366214704436	Rename compilation unit 'GameMap.java'
+1366214724908	Rename type 'GameLevel'
+1366214869324	Rename compilation unit 'LinnearBound.java'
+1366299098350	Rename type 'Constants'
+1366300225587	Rename type 'Utilities'
+1366302803705	Rename resource 'paths.xml'
+1366302827018	Rename resource 'entryway.xml'
+1366302848631	Rename resource 'characters.xml'
+1366309092014	Delete elements

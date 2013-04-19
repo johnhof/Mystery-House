@@ -1,0 +1,40 @@
+import org.newdawn.slick.*;
+
+public interface Constants{
+
+	/*-Sizing tools-*/
+	public static final float SCALE = 4;
+    public static final float SIZE = 16; 
+    public static final int MAP_WIDTH = 600;
+    public static final int MAP_HEIGHT = 600;
+    
+    //public final float MOVE_MULT = 0.05f;
+    public final float MOVE_MULT = 0.09f;
+    
+    
+    /*-Strings-*/
+    
+        
+    /*-Maps-*/
+    public final String ENTRY_WAY = "rsc/new_entry.tmx";
+    public final String KITCHEN = "";
+    public final String LIVING_ROOM = "";
+    public final String PORCH = "";
+    
+    /*-Animations-*/
+    public final String PLAYER_UP_0 = "";
+    public final String PLAYER_UP_1 = "";
+    
+    public final String PLAYER_DOWN_0 = "";
+    public final String PLAYER_DOWN_1 = "";
+    
+    public final String PLAYER_RIGHt_0 = "";
+    public final String PLAYER_RIGHT_1 = "";
+   
+
+    public final String PLAYER_LEFT_0 = "";
+    public final String PLAYER_LEFT_1 = "";
+    
+    
+    /*Images*/
+}

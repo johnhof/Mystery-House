@@ -1,0 +1,138 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.newdawn.slick.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+
+public class ResourceParser 
+{
+	private String manifestPath;
+	private ArrayList<String> roomPaths;
+	private ArrayList<String> objectPaths;
+	private ArrayList characterPath;
+	private Document xmlManifest;
+	
+	DocumentBuilderFactory dbFactory;
+	
+	Map<String, Sprite> spriteCache;
+	Map<String, GameRoom> roomCache;
+	
+	
+	public ResourceParser(String newPath)
+	{
+		manifestPath = newPath;
+		roomPaths = new ArrayList<String>();
+		objectPaths = new ArrayList<String>();
+		dbFactory = DocumentBuilderFactory.newInstance();
+		ParseManifest();
+	}
+	
+	public void setResource(String newPath){manifestPath = newPath;}
+	public String getResource(){return manifestPath;}
+	
+	public void ParseManifest()
+	{
+		//set up the document
+		Document doc = null;
+		xmlManifest = getDocument(new File("rsc/xml/GameManifest.xml"));
+		NodeList roomNodes = xmlManifest.getElementsByTagName("rooms");
+		System.out.println("retrieving map file paths");
+		for(int i = 0; i < roomNodes.getLength(); i++)
+		{
+			Node roomNode = roomNodes.item(i);
+			System.out.println("Current Element: "+roomNode.getNodeName());
+			if(roomNode.getNodeType() == Node.ELEMENT_NODE)
+			{
+				Element roomElement = (Element)roomNode;
+				
+				System.out.println("adding path: "+roomElement.getElementsByTagName("path").item(0).getTextContent());
+				roomPaths.add(roomElement.getElementsByTagName("path").item(0).getTextContent());
+				
+			}
+		}
+		
+		NodeList objectNodes = xmlManifest.getElementsByTagName("objects");
+		System.out.println("retrieving map object paths");
+		for(int i = 0; i < objectNodes.getLength(); i++)
+		{
+			Node objectNode = objectNodes.item(i);
+			System.out.println("Current Element: "+objectNode.getNodeName());
+			if(objectNode.getNodeType() == Node.ELEMENT_NODE)
+			{
+				Element roomElement = (Element)objectNode;
+				
+				System.out.println("adding path: "+roomElement.getElementsByTagName("path").item(0).getTextContent());
+				roomPaths.add(roomElement.getElementsByTagName("path").item(0).getTextContent());
+				
+			}
+		}
+	}
+	
+	public String parseLaunchName()
+	{
+		return null;
+	}
+	
+	public Map<String, GameRoom> getCachedRooms(){return roomCache;}
+	public void parseRooms()
+	{
+		NodeList nList = xmlManifest.getElementsByTagName("rooms");
+	}
+
+	public Map<String, Sprite> getCachedSprites(){return spriteCache;}
+	public void parseSprites()
+	{
+		
+	}
+	
+
+//-------------------------------------------------------------------------------------------------------------------------------
+//-- UTILITIES
+//-------------------------------------------------------------------------------------------------------------------------------
+	    
+	private ArrayList<Object> parseElements(String elementTag)
+	{
+		NodeList objectNodes = xmlManifest.getElementsByTagName(elementTag);
+		System.out.println("retrieving map object paths");
+		for(int i = 0; i < objectNodes.getLength(); i++)
+		{
+			Node objectNode = objectNodes.item(i);
+			System.out.println("Current Element: "+objectNode.getNodeName());
+			if(objectNode.getNodeType() == Node.ELEMENT_NODE)
+			{
+				Element roomElement = (Element)objectNode;
+				
+				System.out.println("adding path: "+roomElement.getElementsByTagName("path").item(0).getTextContent());
+				roomPaths.add(roomElement.getElementsByTagName("path").item(0).getTextContent());
+				
+			}
+		}		
+	}
+	private Document getDocument(File file)
+	{
+		Document doc = null;
+		try 
+		{
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			doc = dBuilder.parse(file);
+		} 
+		catch (SAXException | IOException |ParserConfigurationException e)
+		{
+			e.printStackTrace();
+			return null;
+		} 
+		return doc;
+	}
+	
+}
