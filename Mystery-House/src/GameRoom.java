@@ -1,23 +1,28 @@
+import java.util.ArrayList;
+
 import org.newdawn.slick.*;
 
 public class GameRoom extends GameObject{
 	private String name;
-	private String mapPath;
-	private Boundary [] boundaries;
+	private Image background;
+	private ArrayList<Exit> exits;
 	
-	public GameRoom(int newX, int newY, String newName, String newMapPath) 
+	
+	public GameRoom(String newName, Image newBackground, ArrayList<Boundary> newBounds, ArrayList<Exit> newExits) 
 	{
-		super(newX, newY);
+		super(0, 0);
 		name = newName;
-		mapPath = newMapPath;
-		loadBoundaries();
+		bounds = newBounds;
+		exits = newExits;
 	}
-	
-	public void loadBoundaries()
-	{
-		
-	}
+	//setters
+	public void setExits(ArrayList<Exit> newExits){exits = newExits;}
+	public void setBackground(Image newBackground){background = newBackground;}
 
+	//getters
+	public ArrayList<Exit> getExits(){return exits;}
+	public Image getBackground(){return background;}
+	
 //-------------------------------------------------------------------------------------------------------------------------------
 //-- ABSTRACT INSTANTIATION
 //-------------------------------------------------------------------------------------------------------------------------------

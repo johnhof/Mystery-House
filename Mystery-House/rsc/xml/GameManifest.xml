@@ -1,7 +1,8 @@
 <?xml version="1.0" ?>
 <Manifest>
+    <launchroom>entryway</launchroom>
 	<rooms>
-		<path>rsc/xml/entryway.xml</path>
+		<path>rsc/xml/Rooms.xml</path>
 	</rooms>
 	
 	<sounds>
@@ -9,6 +10,6 @@
 	</sounds>
 	
 	<sprites>
-		<path>rsc/xml/characters.xml</path>
+		<path>rsc/xml/Sprites.xml</path>
 	</sprites>
 </Manifest>
